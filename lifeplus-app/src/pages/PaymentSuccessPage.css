@@ -1,0 +1,402 @@
+/* PaymentSuccessPage.css - Estilo LifePlus para página de éxito */
+.payment-success-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.success-card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(34, 197, 94, 0.15);
+  padding: 48px;
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.success-icon {
+  margin-bottom: 24px;
+}
+
+.checkmark-circle {
+  width: 80px;
+  height: 80px;
+  background: #22c55e;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  position: relative;
+  animation: scaleIn 0.5s ease-out;
+}
+
+.checkmark {
+  width: 25px;
+  height: 50px;
+  position: relative;
+}
+
+.checkmark::before {
+  content: '';
+  position: absolute;
+  width: 6px;
+  height: 30px;
+  background: white;
+  border-radius: 3px;
+  left: 12px;
+  top: 10px;
+  transform: rotate(45deg);
+}
+
+.checkmark::after {
+  content: '';
+  position: absolute;
+  width: 14px;
+  height: 6px;
+  background: white;
+  border-radius: 3px;
+  left: 2px;
+  bottom: 18px;
+  transform: rotate(-45deg);
+}
+
+.success-title {
+  color: #15803d;
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0 0 16px 0;
+  line-height: 1.3;
+}
+
+.success-message {
+  color: #166534;
+  font-size: 16px;
+  margin: 0 0 12px 0;
+  line-height: 1.5;
+}
+
+.success-submessage {
+  color: #15803d;
+  font-size: 14px;
+  margin: 0 0 32px 0;
+  line-height: 1.5;
+}
+
+.order-summary {
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 12px;
+  padding: 24px;
+  margin: 24px 0;
+}
+
+.order-summary h3 {
+  color: #15803d;
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 16px 0;
+}
+
+.order-details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #dcfce7;
+}
+
+.detail-row:last-child {
+  border-bottom: none;
+}
+
+.detail-row span:first-child {
+  color: #166534;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.detail-row span:last-child {
+  color: #15803d;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.amount {
+  color: #16a34a;
+  font-weight: 700;
+}
+
+.transaction-id {
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  color: #166534;
+  background: #f0fdf4;
+  padding: 4px 8px;
+  border-radius: 4px;
+  margin: 8px 0;
+}
+
+.action-buttons {
+  margin: 32px 0;
+}
+
+.continue-shopping-button {
+  background: var(--primary-green, #2E7D32);
+  color: white;
+  border: none;
+  padding: 16px 32px;
+  border-radius: 8px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 8px 16px 0;
+}
+
+.continue-shopping-button:hover {
+  background: var(--primary-green-dark, #1b5e20);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(46, 125, 50, 0.3);
+}
+
+.view-receipt-button {
+  background: #f3f4f6;
+  color: #374151;
+  border: 1px solid #d1d5db;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0 8px 16px 0;
+}
+
+.view-receipt-button:hover {
+  background: #e5e7eb;
+  border-color: #9ca3af;
+}
+
+.contact-info {
+  margin: 32px 0;
+  padding: 20px;
+  background: #f9fafb;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+}
+
+.contact-info h4 {
+  color: #1f2937;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 12px 0;
+}
+
+.contact-info p {
+  color: #6b7280;
+  font-size: 14px;
+  margin: 0 0 8px 0;
+}
+
+.contact-info a {
+  color: var(--primary-green, #2E7D32);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+  color: var(--primary-green-dark, #1b5e20);
+}
+
+.next-steps {
+  background: #ecfdf5;
+  border: 1px solid #d1fae5;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: left;
+  margin: 24px 0;
+}
+
+.next-steps h4 {
+  color: #065f46;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 12px 0;
+}
+
+.next-steps ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.next-steps li {
+  color: #047857;
+  font-size: 14px;
+  padding: 6px 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.next-steps li::before {
+  content: '✓';
+  color: #10b981;
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* Animations */
+@keyframes scaleIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes checkmark {
+  0% {
+    stroke-dashoffset: 100;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .success-card {
+    padding: 32px 24px;
+    margin: 16px;
+  }
+
+  .success-title {
+    font-size: 24px;
+  }
+
+  .checkmark-circle {
+    width: 60px;
+    height: 60px;
+  }
+
+  .checkmark::before,
+  .checkmark::after {
+    transform-origin: center;
+  }
+
+  .checkmark::before {
+    width: 5px;
+    height: 25px;
+    left: 9px;
+    top: 8px;
+  }
+
+  .checkmark::after {
+    width: 12px;
+    height: 5px;
+    left: 0;
+    bottom: 15px;
+  }
+
+  .continue-shopping-button,
+  .view-receipt-button {
+    width: 100%;
+    margin: 0 0 12px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .success-card {
+    padding: 24px 20px;
+  }
+
+  .success-title {
+    font-size: 22px;
+  }
+
+  .success-message {
+    font-size: 15px;
+  }
+
+  .success-submessage {
+    font-size: 13px;
+  }
+
+  .continue-shopping-button {
+    padding: 14px 24px;
+    font-size: 15px;
+  }
+
+  .view-receipt-button {
+    padding: 12px 20px;
+    font-size: 13px;
+  }
+}
+
+/* Special animation for success */
+.success-card {
+  animation: slideUp 0.6s ease-out;
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Confetti effect (optional) */
+.confetti {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #22c55e;
+  border-radius: 50%;
+  animation: confetti-fall 3s ease-out;
+}
+
+@keyframes confetti-fall {
+  0% {
+    transform: translateY(-100vh) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(720deg);
+    opacity: 0;
+  }
+}

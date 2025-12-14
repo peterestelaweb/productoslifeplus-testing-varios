@@ -1,0 +1,376 @@
+/* PaymentErrorPage.css - Estilo LifePlus para página de error de pago */
+.payment-error-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.error-card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(239, 68, 68, 0.15);
+  padding: 48px;
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.error-icon {
+  margin-bottom: 24px;
+}
+
+.error-circle {
+  width: 80px;
+  height: 80px;
+  background: #ef4444;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  position: relative;
+  animation: scaleIn 0.5s ease-out;
+}
+
+.error-x {
+  width: 30px;
+  height: 30px;
+  position: relative;
+}
+
+.error-x::before,
+.error-x::after {
+  content: '';
+  position: absolute;
+  width: 4px;
+  height: 30px;
+  background: white;
+  border-radius: 2px;
+  top: 50%;
+  left: 50%;
+}
+
+.error-x::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.error-x::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.error-title {
+  color: #dc2626;
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0 0 16px 0;
+  line-height: 1.3;
+}
+
+.error-message {
+  color: #7f1d1d;
+  font-size: 16px;
+  margin: 0 0 12px 0;
+  line-height: 1.5;
+}
+
+.error-submessage {
+  color: #991b1b;
+  font-size: 14px;
+  margin: 0 0 32px 0;
+  line-height: 1.5;
+}
+
+.error-type {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 12px;
+  padding: 16px;
+  margin: 24px 0;
+}
+
+.error-type h3 {
+  color: #dc2626;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 8px 0;
+}
+
+.error-type p {
+  color: #7f1d1d;
+  font-size: 14px;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.retry-actions {
+  margin: 32px 0;
+}
+
+.retry-button {
+  background: var(--primary-green, #2E7D32);
+  color: white;
+  border: none;
+  padding: 16px 32px;
+  border-radius: 8px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 8px 16px 0;
+}
+
+.retry-button:hover {
+  background: var(--primary-green-dark, #1b5e20);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(46, 125, 50, 0.3);
+}
+
+.support-button {
+  background: #f3f4f6;
+  color: #374151;
+  border: 1px solid #d1d5db;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0 8px 16px 0;
+}
+
+.support-button:hover {
+  background: #e5e7eb;
+  border-color: #9ca3af;
+}
+
+.contact-info {
+  margin: 32px 0;
+  padding: 20px;
+  background: #f9fafb;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+}
+
+.contact-info h4 {
+  color: #1f2937;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 12px 0;
+}
+
+.contact-info p {
+  color: #6b7280;
+  font-size: 14px;
+  margin: 0 0 8px 0;
+}
+
+.contact-info a {
+  color: var(--primary-green, #2E7D32);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+  color: var(--primary-green-dark, #1b5e20);
+}
+
+.troubleshooting {
+  background: #fef3c7;
+  border: 1px solid #fde68a;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: left;
+  margin: 24px 0;
+}
+
+.troubleshooting h4 {
+  color: #92400e;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 12px 0;
+}
+
+.troubleshooting ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.troubleshooting li {
+  color: #78350f;
+  font-size: 14px;
+  padding: 6px 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.troubleshooting li::before {
+  content: '•';
+  color: #d97706;
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.error-code {
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  color: #9ca3af;
+  background: #f9fafb;
+  padding: 4px 8px;
+  border-radius: 4px;
+  margin: 8px 0;
+}
+
+/* Animations */
+@keyframes scaleIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-2px);
+  }
+  20%, 40%, 60%, 80% {
+    transform: translateX(2px);
+  }
+}
+
+.error-circle.shake {
+  animation: shake 0.5s ease-out;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .error-card {
+    padding: 32px 24px;
+    margin: 16px;
+  }
+
+  .error-title {
+    font-size: 24px;
+  }
+
+  .error-circle {
+    width: 60px;
+    height: 60px;
+  }
+
+  .error-x::before,
+  .error-x::after {
+    width: 3px;
+    height: 24px;
+  }
+
+  .retry-button,
+  .support-button {
+    width: 100%;
+    margin: 0 0 12px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .error-card {
+    padding: 24px 20px;
+  }
+
+  .error-title {
+    font-size: 22px;
+  }
+
+  .error-message {
+    font-size: 15px;
+  }
+
+  .error-submessage {
+    font-size: 13px;
+  }
+
+  .retry-button {
+    padding: 14px 24px;
+    font-size: 15px;
+  }
+
+  .support-button {
+    padding: 12px 20px;
+    font-size: 13px;
+  }
+}
+
+/* Specific error type styles */
+.payment-declined .error-circle {
+  background: #f59e0b;
+}
+
+.payment-declined .error-title {
+  color: #d97706;
+}
+
+.payment-declined .error-message {
+  color: #92400e;
+}
+
+.payment-declined .error-submessage {
+  color: #b45309;
+}
+
+.server-error .error-circle {
+  background: #8b5cf6;
+}
+
+.server-error .error-title {
+  color: #7c3aed;
+}
+
+.server-error .error-message {
+  color: #6d28d9;
+}
+
+.server-error .error-submessage {
+  color: #5b21b6;
+}
+
+.network-error .error-circle {
+  background: #06b6d4;
+}
+
+.network-error .error-title {
+  color: #0891b2;
+}
+
+.network-error .error-message {
+  color: #0e7490;
+}
+
+.network-error .error-submessage {
+  color: #155e75;
+}

@@ -1,0 +1,125 @@
+/* ProductCard.css - Diseño CLONADO del Original */
+
+/* Variables extraídas del original (adaptadas al scope local si es necesario) */
+:root {
+  --bg-cream: #faf8f5;
+  --bg-light-cream: #f5f2ed;
+  --bg-white: #ffffff;
+  --primary-green: #2E7D32;
+  --secondary-green: #4CAF50;
+  --accent-green: #66BB6A;
+  --light-green: #A5D6A7;
+  --dark-green: #1B5E20;
+  --text-primary: #1a1a1a;
+  --text-secondary: #4a4a4a;
+  --text-light: #6b6b6b;
+  --sun-gold: #f4a261;
+  --lifeplus-gradient: linear-gradient(135deg, #2E7D32 0%, #4CAF50 50%, #66BB6A 100%);
+  --shadow-soft: 0 4px 20px rgba(46, 125, 50, 0.10);
+  --shadow-medium: 0 8px 30px rgba(46, 125, 50, 0.15);
+  --radius-liquid: 30px;
+  --radius-smooth: 20px;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+}
+
+.product-card {
+  background: white;
+  border-radius: var(--radius-liquid);
+  padding: var(--space-md);
+  box-shadow: var(--shadow-soft);
+  transition: all 0.3s ease;
+  border: 2px solid rgba(46, 125, 50, 0.05);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-medium);
+  border-color: var(--accent-green);
+}
+
+.product-image-container {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--radius-smooth);
+  overflow: hidden;
+  margin-bottom: var(--space-sm);
+  background: var(--bg-light-cream);
+}
+
+.product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover .product-image {
+  transform: scale(1.05);
+}
+
+.product-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-sm);
+}
+
+.product-code {
+  font-size: 12px;
+  color: var(--text-light);
+  background: var(--bg-light-cream);
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-weight: 500;
+}
+
+.product-card-price {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--primary-green);
+}
+
+.product-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: var(--space-sm);
+  line-height: 1.4;
+}
+
+.product-format {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-md);
+}
+
+.product-link {
+  background: var(--lifeplus-gradient);
+  color: white;
+  text-decoration: none;
+  border-radius: var(--radius-smooth);
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: none;
+  width: 100%;
+  cursor: pointer;
+  margin-top: auto;
+  /* Empuja el botón al fondo si la tarjeta es alta */
+}
+
+.product-link:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-soft);
+}

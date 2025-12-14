@@ -1,0 +1,141 @@
+
+import { useState } from 'react'
+import { ShoppingCart, LogOut, Filter } from 'lucide-react'
+import { useAuth } from '../context/AuthContext'
+import ProductCard from '../components/ProductCard'
+import { products, categories } from '../data/products'
+
+export const LandingPage = () => {
+    const [selectedCategory, setSelectedCategory] = useState('todos')
+    const { signOut, user } = useAuth()
+
+    // Filtrar productos por categoría
+    const filteredProducts = selectedCategory === 'todos'
+        ? products
+        : products.filter(product => product.category === selectedCategory)
+
+    return (
+        <div className="container">
+            {/* Header con usuario y logout */}
+            <div className="nav-container">
+                <div className="nav-buttons" style={{
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                    flexWrap: 'wrap',
+                    gap: '10px',
+                    padding: '20px 0'
+                }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                        <ShoppingCart size={24} color="var(--primary-green)" />
+                        <h1 style={{ margin: 0, fontSize: '1.5rem', color: 'var(--primary-green)' }}>
+                            LifePlus Catálogo
+                        </h1>
+                    </div>
+                    <button
+                        onClick={signOut}
+                        className="nav-btn"
+                        style={{
+                            background: 'var(--primary-green)',
+                            borderColor: 'var(--primary-green)',
+                            color: 'white'
+                        }}
+                    >
+                        <LogOut size={16} /> Salir ({user?.email?.split('@')[0]})
+                    </button>
+                </div>
+            </div>
+
+            {/* Sección principal */}
+            <div className="main-content">
+                <div className="category-section active">
+                    {/* Header de bienvenida */}
+                    <div className="category-header" style={{ textAlign: 'center', marginBottom: '30px' }}>
+                        <h2 className="category-title">
+                            🛒 Catálogo de Productos LifePlus
+                        </h2>
+                        <p style={{ fontSize: '1.1rem', color: '#666' }}>
+                            Compra directa con pagos seguros mediante Stripe
+                        </p>
+                    </div>
+
+                    {/* Filtro de categorías */}
+                    <div style={{
+                        display: 'flex',
+                        gap: '10px',
+                        flexWrap: 'wrap',
+                        justifyContent: 'center',
+                        marginBottom: '30px',
+                        padding: '20px',
+                        background: '#f8f9fa',
+                        borderRadius: '12px'
+                    }}>
+                        <Filter size={20} color="var(--primary-green)" style={{ alignSelf: 'center' }} />
+                        {categories.map(cat => (
+                            <button
+                                key={cat.id}
+                                className={`nav-btn ${selectedCategory === cat.id ? 'active' : ''}`}
+                                onClick={() => setSelectedCategory(cat.id)}
+                                style={{
+                                    padding: '8px 16px',
+                                    borderRadius: '20px',
+                                    border: selectedCategory === cat.id
+                                        ? '2px solid var(--primary-green)'
+                                        : '2px solid #ddd',
+                                    background: selectedCategory === cat.id
+                                        ? 'var(--primary-green)'
+                                        : 'white',
+                                    color: selectedCategory === cat.id ? 'white' : '#333',
+                                    cursor: 'pointer',
+                                    transition: 'all 0.3s ease',
+                                    fontWeight: selectedCategory === cat.id ? 'bold' : 'normal'
+                                }}
+                            >
+                                {cat.name}
+                            </button>
+                        ))}
+                    </div>
+
+                    {/* Grid de productos */}
+                    <div className="products-grid">
+                        {filteredProducts.length > 0 ? (
+                            filteredProducts.map(product => (
+                                <ProductCard key={product.id} product={product} />
+                            ))
+                        ) : (
+                            <div style={{
+                                gridColumn: '1 / -1',
+                                textAlign: 'center',
+                                padding: '40px',
+                                color: '#666'
+                            }}>
+                                <p style={{ fontSize: '1.2rem' }}>
+                                    No hay productos en esta categoría todavía.
+                                </p>
+                            </div>
+                        )}
+                    </div>
+
+                    {/* Información adicional */}
+                    <div style={{
+                        marginTop: '40px',
+                        padding: '20px',
+                        background: '#f0f8f0',
+                        borderRadius: '12px',
+                        textAlign: 'center'
+                    }}>
+                        <h3 style={{ color: 'var(--primary-green)', marginBottom: '10px' }}>
+                            🔒 Pago 100% Seguro
+                        </h3>
+                        <p style={{ color: '#666', marginBottom: '10px' }}>
+                            Todos los pagos son procesados de forma segura mediante Stripe
+                        </p>
+                        <p style={{ color: '#999', fontSize: '0.9rem' }}>
+                            Acepta: Tarjeta de Crédito/Débito, Apple Pay, Google Pay
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    )
+}
