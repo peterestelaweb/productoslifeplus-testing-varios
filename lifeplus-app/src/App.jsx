@@ -27,7 +27,15 @@ function App() {
         <Route path="/stripe-premium" element={<StripePremiumPage />} />
 
         {/* Landing Page - TEMPORARILY PUBLIC for testing design */}
-        <Route path="/" element={<LandingPage />} />
+        {/* Landing Page - Protected */}
+        <Route
+          path="/"
+          element={
+            <ProtectedRoute>
+              <LandingPage />
+            </ProtectedRoute>
+          }
+        />
 
         {/* Dashboard route kept just in case, but Landing is now main protected view */}
         <Route
